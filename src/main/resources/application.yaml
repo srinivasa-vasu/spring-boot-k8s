@@ -10,3 +10,6 @@ management:
 #          include:
 #            - readinessProbe
 #            - db
+server:
+  shutdown:
+    grace-period: 30s

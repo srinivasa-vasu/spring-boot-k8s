@@ -30,6 +30,10 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: "metadata.namespace"
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/bin/sh", "-c", "sleep 10"]
         image: "humourmind/kloudnative:1.0.M1"
         imagePullPolicy: "Always"
         livenessProbe:

@@ -1,0 +1,14 @@
+dekorate:
+  kubernetes:
+    group: humourmind
+    imagePullPolicy: Always
+    labels:
+      - key: "kind"
+        value: "k8s-native"
+    readinessProbe:
+      httpActionPath: /actuator/health/readiness
+    livenessProbe:
+      httpActionPath: /actuator/health/liveness
+    ports:
+      - name: web
+        containerPort: 8080

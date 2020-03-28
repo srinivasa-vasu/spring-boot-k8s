@@ -1,0 +1,17 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: kloudnative
+      context: ../
+      buildpack:
+        builder: humourmind/cnb-java-builder:tiny
+        forcePull: false
+#        runImage: humourmind/cnb-run:tiny
+  tagPolicy:
+    envTemplate:
+      template: 'docker.io/humourmind/{{.IMAGE_NAME}}:1.0.M1'
+  local:
+    push: true
+deploy:
+  kustomize: {}

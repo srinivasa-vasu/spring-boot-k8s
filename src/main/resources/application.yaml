@@ -13,3 +13,7 @@ management:
 server:
   shutdown:
     grace-period: 30s
+wavefront:
+  application:
+    name: sv-k8s
+    service: kloud-native

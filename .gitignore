@@ -7,6 +7,9 @@ bin/
 !**/src/test/**
 mvn*
 .mvn
+.DS_Store
+.gradle/
+gradle/
 
 ### STS ###
 .apt_generated

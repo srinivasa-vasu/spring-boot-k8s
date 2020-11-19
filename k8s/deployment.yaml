@@ -18,6 +18,9 @@ spec:
       group: "humourmind"
   template:
     metadata:
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/path: '/actuator/prometheus'
       labels:
         app: "kloudnative"
         kind: "k8s-native"

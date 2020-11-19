@@ -5,7 +5,7 @@ build:
     - image: kloudnative
       context: ../
       buildpack:
-        builder: humourmind/cnb-java-builder:tiny
+        builder: humourmind/paketo-java-builder-tiny@sha256:40be20ed070cce98f6cfa3b9b588919502cc5f4f7ee330d19ec28cddf7d985bb
         forcePull: false
 #        runImage: humourmind/cnb-run:tiny
   tagPolicy:

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-@SpringBootApplication
+@SpringBootApplication(proxyBeanMethods = false)
 // @KubernetesApplication(name = "kloudnative", readinessProbe = @Probe(httpActionPath =
 // "/actuator/health/readiness"), livenessProbe = @Probe(httpActionPath =
 // "/actuator/health/liveness"), labels = {

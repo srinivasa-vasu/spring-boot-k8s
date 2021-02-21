@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  starter.hello: kb
+  app.yaml: |
+    starter:
+      hello: "test"
+
+
+

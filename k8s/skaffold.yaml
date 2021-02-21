@@ -1,16 +1,23 @@
-apiVersion: skaffold/v1
+apiVersion: skaffold/v2beta12
 kind: Config
 build:
   artifacts:
-    - image: kloudnative
+    - image: humourmind/kloudnative
       context: ../
-      buildpack:
-        builder: humourmind/paketo-java-builder-tiny@sha256:40be20ed070cce98f6cfa3b9b588919502cc5f4f7ee330d19ec28cddf7d985bb
-        forcePull: false
+      buildpacks:
+        builder: paketobuildpacks/builder:base
+#        dependencies:
+#          paths:
+#            - ../build/libs/kloudnative-1.0.jar
+#        env:
+#          - BP_GRADLE_BUILT_ARTIFACT="../build/libs/kloudnative-1.0.jar"
+#          - BP_GRADLE_BUILD_ARGUMENTS="-x test"
+#        forcePull: false
 #        runImage: humourmind/cnb-run:tiny
   tagPolicy:
     envTemplate:
-      template: 'docker.io/humourmind/{{.IMAGE_NAME}}:1.0.M1'
+#      template: 'docker.io/humourmind/{{.IMAGE_NAME}}:1.0.M1'
+      template: '1.0'
   local:
     push: true
 deploy:

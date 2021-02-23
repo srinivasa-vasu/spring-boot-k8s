@@ -6,9 +6,7 @@ metadata:
     prometheus.io/scrape: 'true'
     prometheus.io/path: '/actuator/prometheus'
   labels:
-    app: "kloudnative"
-    kind: "k8s-native"
-    version: "1.0.M1"
+    type: "kloudnative"
     group: "humourmind"
   name: "kloudnative"
 spec:
@@ -17,8 +15,6 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    app: "kloudnative"
-    kind: "k8s-native"
-    version: "1.0.M1"
+    type: "kloudnative"
     group: "humourmind"
   type: "ClusterIP"

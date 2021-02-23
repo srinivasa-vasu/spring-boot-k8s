@@ -3,18 +3,14 @@ apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
   labels:
-    app: "kloudnative"
-    kind: "k8s-native"
-    version: "1.0.M1"
+    type: "kloudnative"
     group: "humourmind"
   name: "kloudnative"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: "kloudnative"
-      kind: "k8s-native"
-      version: "1.0.M1"
+      type: "kloudnative"
       group: "humourmind"
   template:
     metadata:
@@ -22,11 +18,10 @@ spec:
         prometheus.io/scrape: 'true'
         prometheus.io/path: '/actuator/prometheus'
       labels:
-        app: "kloudnative"
-        kind: "k8s-native"
-        version: "1.0.M1"
+        type: "kloudnative"
         group: "humourmind"
     spec:
+      terminationGracePeriodSeconds: 30
       volumes:
         - name: app-config
           configMap:

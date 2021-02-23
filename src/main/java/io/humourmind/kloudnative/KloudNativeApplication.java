@@ -29,10 +29,10 @@ public class KloudNativeApplication {
 	RouterFunction<ServerResponse> routeHandler(final StarterConfig config) {
 		return route().GET("/hello", request -> ok().body(Mono.fromSupplier(() -> {
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(config.getDelay());
 			}
 			catch (InterruptedException e) {
-				e.printStackTrace();
+				// do nothing
 			}
 			return config.getHello();
 		}), String.class)).build();

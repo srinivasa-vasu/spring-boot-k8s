@@ -23,7 +23,7 @@ spring:
   lifecycle:
     timeout-per-shutdown-phase: 10s
   config:
-    import: file:/app/config/app.yaml, configtree:/app/config/
+    import: optional:file:/app/config/app.yaml, optional:configtree:/app/config/
 server:
   shutdown: graceful
 

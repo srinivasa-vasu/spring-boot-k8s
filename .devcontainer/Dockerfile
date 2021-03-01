@@ -1,6 +1,8 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.158.0/containers/codespaces-linux/.devcontainer/base.Dockerfile
+ARG version=1-focal
+ARG user=srinivasa-vasu
 
-FROM mcr.microsoft.com/vscode/devcontainers/universal:1-focal
+FROM mcr.microsoft.com/vscode/devcontainers/universal:$version
 
 USER root
 
@@ -20,3 +22,4 @@ USER codespace
 RUN echo 'alias k="kubectl"' >> ~/.bashrc
 RUN echo 'alias kc="kubectl create"' >> ~/.bashrc
 RUN echo 'nohup kind create cluster --name local-k8s </dev/null >/dev/null 2>&1 &' >> ~/.bashrc
+RUN echo 'echo $CR_PAT | docker login ghcr.io -u $user --password-stdin' >> ~/.bashrc

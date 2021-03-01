@@ -17,5 +17,6 @@ RUN curl -sSLo skaffold https://storage.googleapis.com/skaffold/releases/latest/
 
 USER codespace
 
-RUN alias k='kubectl'
-RUN alias kc='kubectl create'
+RUN echo 'alias k="kubectl"' >> ~/.bashrc
+RUN echo 'alias kc="kubectl create"' >> ~/.bashrc
+RUN echo 'nohup kind create cluster --name local-k8s </dev/null >/dev/null 2>&1 &' >> ~/.bashrc

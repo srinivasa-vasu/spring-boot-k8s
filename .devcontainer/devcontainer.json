@@ -35,11 +35,5 @@
 
 	"extensions": [
 		"GitHub.vscode-pull-request-github"
-	],
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-//	"postCreateCommand": "oryx build -p virtualenv_name=.venv && ${init} || echo 'Could not auto-build. Skipping.'"
-	"postCreateCommand": "nohup kind create cluster --name local-k8s </dev/null >/dev/null 2>&1 &"
+	]
 }

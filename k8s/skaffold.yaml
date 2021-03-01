@@ -2,7 +2,7 @@ apiVersion: skaffold/v2beta12
 kind: Config
 build:
   artifacts:
-    - image: humourmind/kloudnative-cnb
+    - image: kloudnative-cnb
       context: ../
       buildpacks:
         builder: paketobuildpacks/builder:base

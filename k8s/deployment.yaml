@@ -49,6 +49,13 @@ spec:
           successThreshold: 1
           timeoutSeconds: 10
         name: "kloudnative"
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "300m"
+          requests:
+            memory: "756Mi"
+            cpu: "50m"
         ports:
         - containerPort: 8080
           name: "web"

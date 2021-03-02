@@ -7,6 +7,3 @@ data:
   app.yaml: |
     starter:
       hello: "test"
-
-
-

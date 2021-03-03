@@ -8,7 +8,7 @@ USER root
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends 
 
-RUN curl -sSLo ./kind https://kind.sigs.k8s.io/dl/v0.10.0/kind-linux-amd64 \
+RUN curl -sSLo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64 \
     && chmod +x ./kind \
     && mv ./kind /usr/local/bin/
 

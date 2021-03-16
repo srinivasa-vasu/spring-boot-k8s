@@ -16,6 +16,12 @@ RUN curl -sSLo skaffold https://storage.googleapis.com/skaffold/releases/latest/
     && chmod +x skaffold \
     && mv ./skaffold /usr/local/bin/
 
+RUN curl -sSLo ./dive.tar.gz https://github.com/wagoodman/dive/releases/download/v0.10.0/dive_0.10.0_linux_amd64.tar.gz \
+    && tar -xvf dive.tar.gz dive \
+    && chmod +x dive \
+    && mv ./dive /usr/local/bin/ \
+    && rm ./dive.tar.gz
+
 USER codespace
 
 ENV user=srinivasa-vasu

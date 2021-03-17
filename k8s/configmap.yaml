@@ -3,7 +3,9 @@ kind: ConfigMap
 metadata:
   name: app-config
 data:
-  starter.hello: kb
+  starter.hello: "Hello there! from configtree structure"
+  starter.delay: "2000"
   app.yaml: |
     starter:
-      hello: "test"
+      hello: "Hello there! from file structure"
+      delay: "3000"

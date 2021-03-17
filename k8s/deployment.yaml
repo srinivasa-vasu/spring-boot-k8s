@@ -36,7 +36,7 @@ spec:
           preStop:
             exec:
               command: ["/bin/sh", "-c", "sleep 10"]
-        image: "humourmind/kloudnative-cnb:1.0"
+        image: "ghcr.io/srinivasa-vasu/kloudnative-cnb:1.0"
         imagePullPolicy: "Always"
         livenessProbe:
           failureThreshold: 3

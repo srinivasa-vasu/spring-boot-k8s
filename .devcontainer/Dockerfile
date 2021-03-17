@@ -25,8 +25,9 @@ RUN curl -sSLo ./dive.tar.gz https://github.com/wagoodman/dive/releases/download
 USER codespace
 
 ENV user=srinivasa-vasu
+ENV registry=ghcr.io
 
 RUN echo 'alias k="kubectl"' >> ~/.bashrc
 RUN echo 'alias kc="kubectl create"' >> ~/.bashrc
 RUN echo 'test $(kind get clusters -q | wc -l) -eq 0 && nohup kind create cluster --name local-k8s </dev/null >/dev/null 2>&1 &' >> ~/.bashrc
-RUN echo 'echo $CR_PAT | docker login ghcr.io -u $user --password-stdin' >> ~/.bashrc
+RUN echo 'echo $CR_PAT | docker login $registry -u $user --password-stdin' >> ~/.bashrc

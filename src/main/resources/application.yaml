@@ -16,7 +16,7 @@ wavefront:
     service: kloud-native
 starter:
   hello: "Hello there"
-  delay: 5000
+  delay: 1000
 
 spring:
   main:

@@ -10,21 +10,20 @@ management:
 #          include:
 #            - readinessProbe
 #            - db
-wavefront:
-  application:
-    name: sv-k8s
-    service: kloud-native
+#wavefront:
+#  application:
+#    name: sv-k8s
+#    service: kloud-native
 starter:
   hello: "Hello there"
-  delay: 1000
+  delay: 5000
 
 spring:
   main:
     cloud-platform: kubernetes
   lifecycle:
     timeout-per-shutdown-phase: 10s
-  config:
-    import: optional:file:/app/config/app.yaml, optional:configtree:/app/config/
-server:
-  shutdown: graceful
-
+#  config:
+#    import: optional:file:/app/config/app.yaml, optional:configtree:/app/config/
+#server:
+#  shutdown: GRACEFUL

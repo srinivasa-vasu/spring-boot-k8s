@@ -28,12 +28,12 @@ public class KloudNativeApplication {
 	@Bean
 	RouterFunction<ServerResponse> routeHandler(final StarterConfig config) {
 		return route().GET("/hello", request -> ok().body(Mono.fromSupplier(() -> {
-//			 try {
-//			 	Thread.sleep(config.getDelay());
-//			 }
-//			 catch (InterruptedException e) {
-//			 	// do nothing
-//			 }
+			 try {
+			 	Thread.sleep(config.getDelay());
+			 }
+			 catch (InterruptedException e) {
+			 	// do nothing
+			 }
 			return config.getHello() + " with a delay of " + config.getDelay() + "ms";
 		}), String.class)).build();
 	}

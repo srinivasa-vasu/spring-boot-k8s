@@ -23,7 +23,7 @@ spring:
     cloud-platform: kubernetes
   lifecycle:
     timeout-per-shutdown-phase: 10s
-#  config:
-#    import: optional:file:/app/config/app.yaml, optional:configtree:/app/config/
-#server:
-#  shutdown: GRACEFUL
+  config:
+    import: optional:file:/app/config/app.yaml, optional:configtree:/app/config/
+server:
+  shutdown: GRACEFUL
